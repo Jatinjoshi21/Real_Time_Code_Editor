@@ -6,9 +6,11 @@ import {Server} from "socket.io"
 
 import {YSocketIO} from "y-socket.io/dist/server"
 
-const app = express()
+import dotenv from "dotenv"
 
-dot_env.config()
+dotenv.config()
+
+const app = express()
 
 const PORT = process.env.PORT || 3000
 
