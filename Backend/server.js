@@ -8,6 +8,10 @@ import {YSocketIO} from "y-socket.io/dist/server"
 
 const app = express()
 
+dot_env.config()
+
+const PORT = process.env.PORT || 3000
+
 app.use(express.static("public"))
 
 const httpServer = createServer(app)
@@ -30,6 +34,6 @@ app.get("/health", (req,res)=>{
     })
 })
 
-httpServer.listen(3000,()=>{
+httpServer.listen(process.env.PORT,()=>{
     console.log("Server is running on port 3000")
 })
